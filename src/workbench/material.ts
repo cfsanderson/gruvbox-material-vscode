@@ -18,6 +18,7 @@ export function materialWorkbench(
   let diagnosticTextBackgroundOpacity: string;
 
   // Custom darker background for sidebars and panels (hard contrast enhancement)
+  // Using #171717 for a more consistent dark theme experience
   const customDarkBg =
     variant === "dark" && configuration.darkContrast === "hard"
       ? "#171717"
