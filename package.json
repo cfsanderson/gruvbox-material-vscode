@@ -229,7 +229,8 @@
     "compile:themes": "node dist/hook/generateThemes.js",
     "compile:icon": "node dist/hook/generateIcon.js",
     "compile": "npm run clean && npm run compile:ts && npm run compile:themes && npm run compile:icon",
-    "package": "vsce package && git checkout -- themes",
+    "package": "vsce package",
+    "package-and-revert": "vsce package && git checkout -- themes",
     "lint": "eslint . --ext .ts",
     "browser": "vscode-test-web --browserType=chromium --extensionDevelopmentPath=. .",
     "prepare": "husky install"

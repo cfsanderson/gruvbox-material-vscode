@@ -4,9 +4,14 @@
 BBLUE='\033[1;34m'
 NC='\033[0m' # No Color
 
-printf "${BBLUE}\n=> Regenerating /themes/*.json ...${NC}\n"
-npm run compile
-git add themes
+# Only regenerate themes if source files have changed
+if git diff --cached --name-only | grep -E "(src/.*\.ts|package\.json)" > /dev/null; then
+  printf "${BBLUE}\n=> Source files changed, regenerating /themes/*.json ...${NC}\n"
+  npm run compile
+  git add themes
+else
+  printf "${BBLUE}\n=> No source changes detected, skipping theme regeneration...${NC}\n"
+fi
 
 printf "${BBLUE}=> Formatting...${NC}\n\n"
 npx lint-staged

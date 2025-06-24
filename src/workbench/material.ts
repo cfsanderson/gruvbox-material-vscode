@@ -16,6 +16,12 @@ export function materialWorkbench(
   let editorSelectionBgHl: string;
   let cursorFg: string;
   let diagnosticTextBackgroundOpacity: string;
+
+  // Custom darker background for sidebars and panels (hard contrast enhancement)
+  const customDarkBg =
+    variant === "dark" && configuration.darkContrast === "hard"
+      ? "#171717"
+      : palette.bg;
   if (variant === "dark") {
     switch (
       configuration.darkSelection // {{{
@@ -311,7 +317,7 @@ export function materialWorkbench(
     "activityBarBadge.background": `${palette.grey2}`,
     "activityBarBadge.foreground": `${palette.bg}`,
     "sideBar.foreground": `${palette.grey1}`,
-    "sideBar.background": `${palette.bg}`,
+    "sideBar.background": `${customDarkBg}`,
     "sideBarSectionHeader.background": `${palette.bg}00`,
     "sideBarTitle.foreground": `${palette.grey2}`,
     "sideBarSectionHeader.foreground": `${palette.grey2}`,
@@ -449,6 +455,7 @@ export function materialWorkbench(
     "peekViewTitle.background": `${palette.bg4}`,
     "pickerGroup.border": `${palette.fg0}1a`,
     "terminal.foreground": `${palette.fg}`,
+    "terminal.background": `${customDarkBg}`,
     "terminalCursor.foreground": `${cursorFg}`,
     "terminal.ansiBlack":
       variant === "dark" ? `${palette.bg2}` : `${palette.fg0}`,
@@ -502,7 +509,7 @@ export function materialWorkbench(
     "merge.currentHeaderBackground": `${palette.dimBlue}80`,
     "merge.currentContentBackground": `${palette.dimBlue}40`,
     "merge.border": `${palette.bg}00`,
-    "panel.background": `${palette.bg}`,
+    "panel.background": `${customDarkBg}`,
     "panel.border": `${palette.bg}`,
     "panelInput.border": `${palette.bg5}`,
     "panelTitle.activeForeground": `${palette.grey2}`,

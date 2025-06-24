@@ -50,7 +50,7 @@ class Utils {
 
 const utils = new Utils();
 const configuration: Configuration = {
-  darkContrast: "medium",
+  darkContrast: "hard",
   lightContrast: "medium",
   darkWorkbench: "material",
   lightWorkbench: "material",
