@@ -10,3 +10,4 @@ dist/
 .flag
 icon.png
 .vscode-test-web
+.DS_Store

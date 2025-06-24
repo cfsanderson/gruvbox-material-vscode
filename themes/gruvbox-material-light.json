@@ -237,6 +237,7 @@
     "peekViewTitle.background": "#ebdbb2",
     "pickerGroup.border": "#4f38291a",
     "terminal.foreground": "#654735",
+    "terminal.background": "#fbf1c7",
     "terminalCursor.foreground": "#654735",
     "terminal.ansiBlack": "#4f3829",
     "terminal.ansiBlue": "#45707a",
